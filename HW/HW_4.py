@@ -41,10 +41,22 @@
 4.4.Используя лямбда выражение, получите результат перемножения значений в предыдущем списке
 """
 
-from functools import reduce
+# from functools import reduce
+#
+# my_list = [20, -3, 15, 2, -1, -21]
+# new_list = list(filter(lambda x: x > 0, my_list))
+# summa = reduce((lambda x, y: x + y), new_list)
+#
+# print(summa)
 
-my_list = [20, -3, 15, 2, -1, -21]
-new_list = list(filter(lambda x: x > 0, my_list))
-summa = reduce((lambda x, y: x + y), new_list)
 
-print(summa)
+"""
+4.5. Создайте файл my_calc.py и пропишите в нем минимум 4 функции, выполняющие базовые арифметические вычисления.
+     Примените эти функции в качестве методов в другом файле.
+"""
+from my_calc import *
+
+print(arithmetic(1, 2, "add")) #3
+print(arithmetic(8, 2, "subtract")) #6
+print(arithmetic(5, 2, "multiply")) #10
+print(arithmetic(8, 2, "divide")) #4.0
