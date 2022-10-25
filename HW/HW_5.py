@@ -2,10 +2,10 @@
 #обычный класс
 class BankAccount:
 
-    def __init__(self, name, balance, passpors):
+    def __init__(self, name, balance, passport):
         self.name = name
         self.balance = balance
-        self.passport = passpors
+        self.passport = passport
 
     def print_data(self):
         print(self.name, self.balance, self.passport)
@@ -21,10 +21,10 @@ print()
 #protected класс
 class ProtBankAccount:
 
-    def __init__(self, name, balance, passpors):
+    def __init__(self, name, balance, passport):
         self._name = name
         self._balance = balance
-        self._passport = passpors
+        self._passport = passport
 
     def print_protected_data(self):
         print(self._name, self._balance, self._passport)
@@ -40,17 +40,29 @@ print()
 #protected класс
 class PrivateBankAccount:
 
-    def __init__(self, name, balance, passpors):
+    def __init__(self, name, balance, passport):
         self.__name = name
         self.__balance = balance
-        self.__passport = passpors
+        self.__passport = passport
 
     def print_private_data(self):
         print(self.__name, self.__balance, self.__passport)
 
+    def setAccountData(self,name,balance,passport):
+        self.__name = name
+        self.__balance = balance
+        self.__passport = passport
+    def getAccountData(self):
+        return  self.__name, self.__balance,self.__passport
+
 
 account3 = PrivateBankAccount('Pablo', 355, 545454)
 account3.print_private_data()
-print(account3.__name) # уже обратиться к переменным нельзя - ошибка, но внутри класса можно создать фкнцию, которая будет иметь к ним доступ см строку. 48-49
-print(account3.__balance)
-print(account3.__passport)
+# print(account3.__name) # уже обратиться к переменным нельзя - ошибка, но внутри класса можно создать фкнцию, которая будет иметь к ним доступ см строки. 48-56
+# print(account3.__balance)
+# print(account3.__passport)
+
+
+account3.setAccountData('NEwname',000,32132132)
+account3.print_private_data()
+print(account3.getAccountData())
